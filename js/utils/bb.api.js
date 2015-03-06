@@ -17,6 +17,7 @@ function BBClient (url) {
         responseData = $.ajax({
             url: endpointURL,
             jsonp : 'callback',
+            data : requestData,
             dataType: 'jsonp'
         });
 		return responseData
