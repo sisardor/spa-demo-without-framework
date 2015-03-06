@@ -1,4 +1,7 @@
+/*global Handlebars, $, dome */
 (function () {
+	'use strict';
+
 	//BBProducts will display data in li
 	window.BBProducts = (function(dome){
 		// PRIVATE 
@@ -6,11 +9,11 @@
 			template,
 			html;
 
-		function dynamicEvent(e) {
+		function dynamicEvent() {
 			var sku = this.dataset.sku;
 			var hash = window.location.hash.slice(1);
 			var currentHash;
-			if(hash === "" || hash==="/") {
+			if(hash === '' || hash==='/') {
 				currentHash = '#/';
 			} else {
 				hash = hash.split('/');
@@ -20,7 +23,7 @@
 				currentHash = '#/' + hash[0] +'/' + hash[1].split('?')[0];
 			}
 
-			window.history.pushState({sku: sku}, "title 1", currentHash + "?sku="+sku);
+			window.history.pushState({sku: sku}, 'title 1', currentHash + '?sku='+sku);
 			$(window).trigger('hashchange');
 		}
 
@@ -39,8 +42,8 @@
 		myClass.bindUIActions = function(productList){
 			var items = productList.find('li');
 			for (var i = 0; i < items.length; i++) {
-				items[i].onclick = dynamicEvent
-			};
+				items[i].onclick = dynamicEvent;
+			}
 		};
 
 

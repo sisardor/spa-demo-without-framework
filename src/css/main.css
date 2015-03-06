@@ -46,3 +46,8 @@
   top: 0px;
   left: 100px;
 }
+
+li.pure-menu-item.active {
+  background: #eee;
+}
+

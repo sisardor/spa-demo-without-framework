@@ -1,4 +1,7 @@
-(function () {
+/*global Handlebars, $, dome */
+(function () { 
+	'use strict';
+	
 	// Product detail class, it will open modal and display detailed view
 	window.BBProductDetail = (function(dome){
 		// PRIVATE 
@@ -19,9 +22,9 @@
 
 		myClass.CloseModal = function(){
 			dome.get('#product__detail').removeClass('md-show');
-	        window.history.replaceState( {}, "title 1", window.location.hash.split("?")[0]);
+	        window.history.replaceState( {}, 'title 1', window.location.hash.split('?')[0]);
 	        $(window).trigger('hashchange');
-		}
+		};
 
 
 		myClass.bindUIActions = function(modal){
