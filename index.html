@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/base-min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/modal.css">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+
+<div class="pure-g">
+    <div class="pure-u-1-4">
+        <!------- SIDEBAR -------->
+        <div id="sidebar__menu" class="pure-menu custom-restricted-width"></div>
+    </div>
+    <div class="pure-u-3-4">
+        <!------- BB APP -------->
+        <div id="product__listing" class="bb-items"> </div>
+    </div>
+</div>
+
+
+
+<div class="md-modal md-effect-3" id="product__detail"></div>
+<div class="md-overlay"></div><!-- the overlay element -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  Handlebar Templates -->
+<!--  SideBar Templates -->
+<script id="tmpl-sidebar-menu" type="text/x-handlebars-template">
+    <span class="pure-menu-heading">Products</span>
+    <ul class="pure-menu-list">
+        {{#each this}}
+        <li class="pure-menu-item" data-category-id="{{id}}">
+            <a href="javascript:void(0);" class="pure-menu-link">{{name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</script>
+
+<!--  Product Box List Templates -->
+<script id="bb-card" type="text/x-handlebars-template">
+    <ul class="bb-items-list products-list">
+    	{{#each this}}
+    	  	<li data-sku="{{sku}}">
+    			<img class="pure-img" src="http://www.bestbuy.ca/{{thumbnailImage}}">
+                <p>${{regularPrice}}</p>
+                <p class="product-name">{{name}}</p>
+    	    </li>
+    	{{/each}}
+    </ul>
+</script>
+
+<!--  Modal Templates -->
+<script id="bb-detailed-view" type="text/x-handlebars-template">
+    <div class="md-content">
+        <div>
+            <p>{{name}}</p>
+            <p>Price: ${{regularPrice}}</p>
+            <img class="pure-img" src="http://www.bestbuy.ca/{{thumbnailImage}}">
+            <p>{{shortDescription}}</p>
+            <a href="{{productUrl}}" target="_blank">productUrl</a>
+            <button id="model__close" class="md-close md-button" >Close me!</button>
+        </div>
+    </div>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+<script src="js/libs/handlebars-v3.0.0.js"></script>
+<script src="js/utils/custom-dome-library.js"></script>
+<script src="js/utils/bb.api.js"></script>
+
+<script type="text/javascript">
+    window.bbClient = new BBClient('http://www.bestbuy.ca/');
+    
+</script>
+
+<script src="js/BBProductDetail.js"></script>
+<script src="js/BBSidebarMenu.js"></script>
+<script src="js/BBProducts.js"></script>
+<script src="js/route.js"></script>
+
+</body>
+</html>

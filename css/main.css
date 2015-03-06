@@ -1,0 +1,48 @@
+.custom-restricted-width {
+    /* To limit the menu width to the content of the menu: */
+    display: inline-block;
+    /* Or set the width explicitly: */
+    /* width: 10em; */
+}
+.products-list {
+  list-style: none;
+  margin-left: 15px;
+  text-align: center;
+  padding: 0;
+  opacity: 1;
+  font-size: 0;
+}
+.products-list > li {
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s;
+  text-align: left;
+  font: normal 12px sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #dbe3e7;
+  border-radius: 3px;
+  box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+  margin: 0 12px 14px 0;
+  padding: 15px;
+  float: left;
+  width: 200px;
+}
+.products-list li h1 {
+  font-size: 12px;
+}
+.product-name {
+    line-height: 1.5em;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+
+.modal {
+  position: fixed;
+  top: 0px;
+  left: 100px;
+}
