@@ -35,17 +35,6 @@ app.get('/*', function(req, res) {
     // to the API (e.g. in case you use sessions)
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Content-Type', 'application/json');
-    //res.send(JSON.stringify({}));
-    var command = ' curl http://www.bestbuy.ca'+req.url
-
-		child = exec(command, function(error, stdout, stderr){
-
-			if(error !== null)
-			{
-			    
-			}
-			res.send(stdout);
-		});	
 });
 
 

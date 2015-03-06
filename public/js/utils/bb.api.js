@@ -14,12 +14,10 @@ function BBClient (url) {
 	var apiRequest = function(requestPath, requestMethod, requestData) {
 		var responseData;
 		var endpointURL = client.baseURL + requestPath;
-		responseData = $.ajax(
-		{
-			url: endpointURL,
-            type: requestMethod,
-            data: requestData,
-            contentType: "application/json"
+        responseData = $.ajax({
+            url: endpointURL,
+            jsonp : 'callback',
+            dataType: 'jsonp'
         });
 		return responseData
 	}

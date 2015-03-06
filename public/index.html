@@ -111,14 +111,7 @@
 <script src="js/utils/bb.api.js"></script>
 
 <script type="text/javascript">
-    /* 
-    If you open thie page in brower from localhsot, you may get error in console like this: 
-             XMLHttpRequest cannot load http://www.bestbuy.ca/api/v2/json/category/Departments. No 'Access-Control-Allow-Origin' ..
-    API not allowing ajax call
-    You can run simple proxy node server, and open browser at http://localhost:3000/
-    */ 
-    window.bbClient = new BBClient('http://localhost:3000/');
-    //window.bbClient = new BBClient('http://www.bestbuy.ca/');
+    window.bbClient = new BBClient('http://www.bestbuy.ca/');
     
 </script>
 
